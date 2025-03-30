@@ -1,4 +1,5 @@
 /** @file Tests for checkEnv module. */
+/* eslint-disable no-empty-function */
 /* eslint-disable max-lines-per-function */
 import { beforeEach, describe, expect, it, vi } from "vitest"
 import { checkEnv } from "@/services/checkEnv.js" // Adjust the import path accordingly
