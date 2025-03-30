@@ -8,10 +8,10 @@ import {
   validatePhone,
 } from "@/services/validation.js"
 
-describe("property validation", () => {
+describe("Submission validation", () => {
   describe("email", () => {
     // Test email property validation.
-    it("validates proper email", () => {
+    it("accepts valid email", () => {
       expect(() => validateEmail("john.locke@example.com")).not.toThrow()
     })
 
@@ -23,7 +23,7 @@ describe("property validation", () => {
 
   // Test name property validation.
   describe("name", () => {
-    it("validates proper name", () => {
+    it("accepts valid name", () => {
       // Test if first name only was provided.
       expect(() => validateName("Jack")).not.toThrow()
       // Test if full name was provided.
@@ -45,7 +45,7 @@ describe("property validation", () => {
 
   // Test phone property validation.
   describe("phone", () => {
-    it("validates proper phone", () => {
+    it("accepts valid phone", () => {
       // Test multiple valid phone number formats.
       expect(() => validatePhone("3213213214")).not.toThrow()
       expect(() => validatePhone("(321) 321-3214")).not.toThrow()
@@ -59,8 +59,8 @@ describe("property validation", () => {
   })
 
   // Test message property validation.
-  describe("property validation", () => {
-    it("validates proper message", () => {
+  describe("message", () => {
+    it("accepts valid message", () => {
       // Test validating valid message.
       expect(() => validateMessage("This is a message.")).not.toThrow()
     })
