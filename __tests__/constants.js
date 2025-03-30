@@ -1,4 +1,6 @@
 /** @file Constants for tests. */
+
+/** Valid form submission object. */
 export const validSubmission = {
   name: "John Locke",
   email: "john.locke@example.com",
