@@ -13,8 +13,10 @@ describe("Submission > send", () => {
       sendMail: sendMailMock,
     })
 
+    // Create a new submission with valid data.
     const submission = new Submission(validSubmission)
-    await submission.send() // Call the send() method
+    // Send the email.
+    await submission.send()
 
     // Check if sendMail was called with the correct arguments
     expect(sendMailMock).toHaveBeenCalledTimes(1)
@@ -30,6 +32,7 @@ describe("Submission > send", () => {
   })
 
   it("should throw an error if sending the email fails", async () => {
+    // Mock rejected value from sendMail.
     const sendMailMock = vi
       .fn()
       .mockRejectedValue(new Error("Email sending failed"))
@@ -38,8 +41,10 @@ describe("Submission > send", () => {
       sendMail: sendMailMock,
     })
 
+    // Create new submission with valid data.
     const submission = new Submission(validSubmission)
 
+    // Expect error thrown if send() fails.
     await expect(submission.send()).rejects.toThrow("Email sending failed")
   })
 })
