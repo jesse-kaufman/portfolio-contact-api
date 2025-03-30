@@ -60,7 +60,7 @@ const config = [
       "arrow-body-style": [
         "warn",
         "as-needed",
-        { requireReturnForObjectLiteral: true },
+        { requireReturnForObjectLiteral: false },
       ],
       camelcase: ["warn", { ignoreImports: true }],
       "capitalized-comments": [
