@@ -3,8 +3,8 @@ import { describe, it, expect } from "vitest"
 import { validSubmission } from "../constants.js"
 import { Submission } from "@/models/Submission.js"
 
-describe("Submission validation", () => {
-  // Test successful call to validate().
+describe("Submission class", () => {
+  // Test successful creation and data retrieval
   it("should initialize the instance properly if all required fields are provided and valid", () => {
     let submission = null
 
