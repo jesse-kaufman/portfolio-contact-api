@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 /** @file Config for eslint. */
 /* eslint-disable no-magic-numbers */
 import pluginJs from "@eslint/js"
