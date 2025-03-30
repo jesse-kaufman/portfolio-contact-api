@@ -6,7 +6,7 @@ import {
   validateName,
   validateMessage,
   validatePhone,
-} from "../../src/services/validation"
+} from "@/services/validation.js"
 
 describe("property validation", () => {
   describe("email", () => {
