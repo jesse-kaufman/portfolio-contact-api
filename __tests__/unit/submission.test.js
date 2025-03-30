@@ -15,6 +15,7 @@ describe("Submission validation", () => {
 
     expect(() => (submission = new Submission(data))).not.toThrow()
     expect(submission.getData()).toEqual(data)
+    expect(submission.toJSON()).toEqual(data)
   })
 
   it("should throw an error if required fields are missing", () => {
