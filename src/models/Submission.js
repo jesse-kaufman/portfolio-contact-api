@@ -1,5 +1,7 @@
 /** @file Submission model class. */
 
+import nodemailer from "nodemailer"
+import { sendMail } from "../services/sendMail.js"
 import {
   validateEmail,
   validateMessage,
@@ -64,5 +66,23 @@ export class Submission {
     validateName(this.#name)
     validateEmail(this.#email)
     validateMessage(this.#message)
+  }
+
+  /** Sends the email. */
+  async send() {
+    const config = {
+      host: process.env.SMTP_SERVER, // Your local mail server address (use 'localhost' for local)
+      port: process.env.SMTP_PORT, // Port for SSL (usually 465 or 587 for TLS)
+      secure: true, // Use SSL/TLS
+      auth: {
+        user: "", // Leave empty if no authentication is required
+        pass: "", // Leave empty if no authentication is required
+      },
+    }
+
+    // Configure nodemailer transport with encryption (SSL or TLS)
+    const transporter = nodemailer.createTransport(config)
+
+    await sendMail(transporter, this.getData())
   }
 }
